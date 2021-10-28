@@ -2,10 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 
 function Home() {
-  const Weather = () => {
+  let [WorldTime, setWorldTime] = useState([]);
+  const Time = () => {
     axios
-      .get("http://worldtimeapi.org/api")
+      .get("http://worldtimeapi.org/")
       .then((result) => {
+        WorldTime = result.data;
+        setWorldTime(WorldTime);
         console.log(result);
       })
       .catch((err) => {
@@ -13,7 +16,11 @@ function Home() {
       });
   };
 
-  return <h2>{Weather}</h2>;
+  return (
+    <div>
+      <button onClick={Time}>time</button>
+    </div>
+  );
 }
 
 export default Home;
