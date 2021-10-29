@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 
 function Mycomment() {
-  //Input box value 
+  //Input box value
   const [add, setAdd] = useState("");
-  // Comments List 
+  // Comments List
   const [value, setValue] = useState([]);
 
   //Add func
   const addComment = () => {
-    //check if input is empty 
+    //check if input is empty
     if (add == "") return;
 
-    // create temp array 
+    // create temp array
     let tempArr = [...value];
-    //get add value and push it in temp array 
+    //get add value and push it in temp array
     tempArr.push(add);
-    // store  the temp array into Comments List 
+    // store  the temp array into Comments List
     setValue(tempArr);
-    //Make the text  input empty 
+    //Make the text  input empty
     setAdd("");
   };
 
-  //Delete Func 
+  //Delete Func
   const handelDelete = (index) => {
     // creare Temp arr and store the current value
     let tempArr = [...value];
     // delete the clicked item from the temp Arr
     tempArr.splice(index, 1);
-     // store  the temp array into Comments List 
+    // store  the temp array into Comments List
     setValue(tempArr);
   };
 
@@ -37,7 +37,7 @@ function Mycomment() {
       <input
         value={add}
         onChange={(e) => setAdd(e.target.value)}
-        style={{ width: 220, marginBottom: 10, height: 20 }}
+        style={{ width: 260, marginBottom: 2, height: 20 }}
         type="text"
         placeholder="Type a comment ..."
       />
@@ -47,9 +47,20 @@ function Mycomment() {
       <hr />
       <ul>
         {value.map((e, index) => (
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <li style={{ listStyleType: "none", textAlign: "left" }}>{e}</li>
-            <button onClick={() => handelDelete(index)}>Delete</button>
+          <div style={{ display: "grid", gridTemplateColumns: "220px 40px" }}>
+            <li
+              style={{
+                listStyleType: "none",
+                textAlign: "left",
+                fontSize: 15,
+                fontWeight: "bold",
+              }}
+            >
+              {e}
+            </li>
+            <div>
+              <button onClick={() => handelDelete(index)}>Delete</button>
+            </div>
           </div>
         ))}
       </ul>

@@ -1,7 +1,7 @@
 import "../App.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import About from "./About";
 import Post from "./post";
 
@@ -35,14 +35,14 @@ function NavBar(props) {
     <Router>
       <nav>
         <li>
-          <Link  to="/post" className="mylink">
+          <NavLink  to="/post" className="mylink" activeClassName="selected">
             Post
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" className="mylink">
+          <NavLink to="/about" className="mylink" activeClassName="selected">
             About Us
-          </Link>
+          </NavLink>
         </li>
         <li>
           <select
@@ -59,8 +59,7 @@ function NavBar(props) {
           </select>
         </li>
         <li style={{ fontSize: 16, marginLeft: 30 }}> {temp + "°"}</li>
-        <li> 
-          <img src={icon} width={40} height={40} style={{ borderRadius: 30 }} />
+        <li> <img src={icon} width={50} height={50} style={{ borderRadius: 30 }} />
         </li>
       </nav>
 

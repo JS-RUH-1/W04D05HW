@@ -7,19 +7,19 @@ function Post(props) {
       posTitle: "First post",
       comment: "",
       image:
-        "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202008/Share_Multiple_Photos_and_Vide.jpeg?unoTzeJwAg_xbBQ0tXg8pxV5A5sl1VEO&size=770:433",
+        "https://media.almayadeen.tv/archive/image/2020/6/18/e063130d-751a-4934-8753-f01f758c7428.png?v=3",
     },
     {
       posTitle: "Second post",
       comment: "",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq7R4ydXlFIpSBpvvH6iCmHRzkMVS7mStNp7ISOMJJ4Ha9VC5BZloBd_4FYsb8GxHST-U&usqp=CAU",
+        "https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ",
     },
     {
       posTitle: "Third post",
       comment: "",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQgfN8ghjrrR-XoJNtShZN3vE2RNiGjGCXeA&usqp=CAU",
+        "https://whatsnewinpublishing.com/wp-content/uploads/2017/02/snapchat.jpg",
     },
   ]);
 
@@ -28,22 +28,22 @@ function Post(props) {
     <div>
       <h1>Posts Page</h1>
       <div className="container">
+
         {arr.map((e, index) => (
           <div className="mycon">
             <img
               src={e.image}
               alt={""}
-              width={300}
+              width={400}
               height={300}
               style={{ borderRadius: 5 }}
             />
-
             <h4>{e.posTitle}</h4>
-           
             <Mycomment  />
           
           </div>
         ))}
+
       </div>
     </div>
   );

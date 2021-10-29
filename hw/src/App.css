@@ -4,69 +4,101 @@
 nav {
   margin: 27px auto 0;
   position: relative;
-  width: 450px;
+  width: 300px;
   height: 60px;
   background-color: #34495e;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 8px;
-
+ 
   border-radius: 20px;
 }
 .container {
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: 400px 400px 400px;
   gap: 50px;
   justify-content: center;
   text-align: center;
   align-items: center;
 }
+input{
+  margin-right: 10px;
+  padding: 10px;
+  border:none
+
+}
 select{
+  position: absolute;
   background-color: transparent;
-  border-style: none;
+  border: none;
+  color: #f3ffca;
+  font-size: 13px;
+  font-weight: bold;
   
 }
 .mycon {
+  
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
   border-radius: 10px;
   border-style:solid;
   border-color: #c3c3c3;
   border-width: 0.2ch;
-  height: 450px;overflow: scroll;
+  height: 470px;overflow: scroll;
   
 
 }
 .mylink {
-  font-size: 16px;
+  font-size: 20px;
   margin-left:5px;
   text-decoration: none;
   color: white;
 }
 nav li {
   height: 80%;
-  
-  font-size: 20px;
   display: inline-block;
-  position: relative;
+  position: absolute;
+  top:20px;
+  left: 20px;
   z-index: 1;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
   color: white;
   cursor: pointer;
+  
 }
 .selected {
-  background-color: tomato;
+  padding: 5px;
+  background-color: rgba(255,255,255,0.2);
+ 
 }
 
 
 li:nth-child(1) {
-
-  width: 120px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  left: 20px;
 }
 li:nth-child(2) {
-  width: 120px;
-}
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 
+
+  left: 100px;
+}
+li:nth-child(3) {
+  top:40px;
+  left: 200px;
+}
+li:nth-child(4) {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  top:10px;
+  left: 205px;
+}
+li:nth-child(5) {
+  top:-12px;
+  left: 265px;
+}
 
 body {
   font-size: 12px;
