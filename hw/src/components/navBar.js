@@ -6,18 +6,27 @@ import About from "./About";
 import Post from "./post";
 
 function NavBar(props) {
+
+  //Define varbiles to store the value from the API 
+  // tempreture 
   const [temp, setTemp] = useState("");
+  //wheather iCON
   const [icon, setIcon] = useState("");
+  //select list  value 
   const [value, setValue] = useState("Riyadh");
 
+  // Fetch the Api based on the value from Select List
   const fetchApi = async () => {
     const data = await axios.get(
       `http://api.weatherstack.com/current?access_key=7ff136af77dfc444577ce6cbb4358c06&query=${value}`
     );
-
+    //Set the Temperature
     setTemp(data.data.current.temperature);
+    //Set the Weather icon
     setIcon(data.data.current.weather_icons[0]);
   };
+
+  //Gets Call whenever select list value change
   useEffect(() => {
     fetchApi();
   }, [value]);
@@ -26,13 +35,11 @@ function NavBar(props) {
     <Router>
       <nav>
         <li>
-          {" "}
           <Link to="/post" className="mylink">
             Post
           </Link>
         </li>
         <li>
-          {" "}
           <Link to="/about" className="mylink">
             About Us
           </Link>
