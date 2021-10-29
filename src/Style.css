@@ -3,3 +3,16 @@
 .center {
     text-align: center;
 }
+
+html, body {
+    background-color: #fafafa;
+}
+
+.card img {
+    max-height: 600px;
+    width: 100%;
+}
+
+.posts {
+    max-width: 50rem
+}
