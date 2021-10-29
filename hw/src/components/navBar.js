@@ -35,7 +35,7 @@ function NavBar(props) {
     <Router>
       <nav>
         <li>
-          <Link to="/post" className="mylink">
+          <Link  to="/post" className="mylink">
             Post
           </Link>
         </li>
@@ -46,7 +46,7 @@ function NavBar(props) {
         </li>
         <li>
           <select
-            style={{ marginLeft: 10 }}
+            style={{ marginLeft: 20 }}
             defaultValue={value}
             onChange={(e) => setValue(e.target.value)}
           >
@@ -58,10 +58,9 @@ function NavBar(props) {
             <option value="Mecca">Mecca</option>
           </select>
         </li>
-        <li style={{ fontSize: 16, marginLeft: 10 }}> {temp + "°"}</li>
-        <li>
-          {" "}
-          <img src={icon} width={40} height={40} style={{ borderRadius: 20 }} />
+        <li style={{ fontSize: 16, marginLeft: 30 }}> {temp + "°"}</li>
+        <li> 
+          <img src={icon} width={40} height={40} style={{ borderRadius: 30 }} />
         </li>
       </nav>
 

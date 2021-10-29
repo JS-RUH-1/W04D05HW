@@ -3,12 +3,13 @@
 }
 nav {
   margin: 27px auto 0;
-
   position: relative;
-  width: 600px;
-  height: 50px;
+  width: 450px;
+  height: 60px;
   background-color: #34495e;
-  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 8px;
+
+  border-radius: 20px;
 }
 .container {
   display: grid;
@@ -18,10 +19,18 @@ nav {
   text-align: center;
   align-items: center;
 }
+select{
+  background-color: transparent;
+  border-style: none;
+  
+}
 .mycon {
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 4px 8px;
   border-radius: 10px;
+  border-style:solid;
+  border-color: #c3c3c3;
+  border-width: 0.2ch;
   height: 450px;overflow: scroll;
   
 
@@ -33,9 +42,9 @@ nav {
   color: white;
 }
 nav li {
-  line-height: 50px;
-  height: 100%;
-  font-size: 15px;
+  height: 80%;
+  
+  font-size: 20px;
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -48,29 +57,21 @@ nav li {
 .selected {
   background-color: tomato;
 }
-nav .animation {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  z-index: 0;
-  transition: all 0.5s ease 0s;
-  border-radius: 8px;
-}
+
 
 li:nth-child(1) {
-  width: 100px;
+
+  width: 120px;
 }
 li:nth-child(2) {
-  width: 110px;
+  width: 120px;
 }
-li:nth-child(3) {
-  width: 100px;
-}
+
 
 body {
   font-size: 12px;
   font-family: sans-serif;
-  background: #2c3e50;
+  background: #c8e3ff;
 }
 h1 {
   text-align: center;
@@ -82,15 +83,7 @@ h1 {
   font-family: "Cherry Swash", cursive;
 }
 
-p {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  color: #ecf0f1;
-  font-family: "Cherry Swash", cursive;
-  font-size: 16px;
-}
+
 
 span {
   color: #2bd6b4;

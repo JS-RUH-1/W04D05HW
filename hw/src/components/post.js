@@ -35,7 +35,7 @@ function Post(props) {
               alt={""}
               width={300}
               height={300}
-              style={{ borderRadius: 10 }}
+              style={{ borderRadius: 5 }}
             />
 
             <h4>{e.posTitle}</h4>
