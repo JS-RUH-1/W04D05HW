@@ -1,6 +1,13 @@
+import "../App.css";
 import React, { useEffect, useState } from "react";
 import Mycomment from "./comment";
-function Post(props) {
+import { Modal, Button } from "react-bootstrap";
+
+function Post() {
+  const [modalShow, setModalShow] = useState(false);
+
+  const [addImage, setAddImage] = useState("");
+  const [addTitle, setAddTitle] = useState("");
 
   const [arr, setArr] = useState([
     {
@@ -23,12 +30,63 @@ function Post(props) {
     },
   ]);
 
+  const handelAdd = () => {
+    let tempArray = [...arr];
+    tempArray.push({ posTitle: addTitle, image: addImage });
+    setArr(tempArray);
+    setModalShow(false);
+    console.log(tempArray);
+  };
 
   return (
     <div>
       <h1>Posts Page</h1>
-      <div className="container">
 
+      <Button
+        style={{ margin: 30 }}
+        variant="primary"
+        onClick={() => setModalShow(true)}
+      >
+        Add Post
+      </Button>
+
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">New Post</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <span>Title:</span>{" "}
+          <input
+            type="text"
+            className="modalInput"
+            value={addTitle}
+            onChange={(e) => setAddTitle(e.target.value)}
+          />
+          <span>URL::</span>{" "}
+          <input
+            type="text"
+            className="modalInput"
+            value={addImage}
+            onChange={(e) => setAddImage(e.target.value)}
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={() => setModalShow(false)}>
+            Cancel
+          </Button>
+          <Button variant="primary" onClick={() => handelAdd()}>
+            Save
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <div className="container">
         {arr.map((e, index) => (
           <div className="mycon">
             <img
@@ -39,11 +97,9 @@ function Post(props) {
               style={{ borderRadius: 5 }}
             />
             <h4>{e.posTitle}</h4>
-            <Mycomment  />
-          
+            <Mycomment />
           </div>
         ))}
-
       </div>
     </div>
   );
