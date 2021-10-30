@@ -1,0 +1,83 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(204, 224, 178);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(240, 112, 112);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: cursive;
+}
+
+li a:hover {
+  background-color: rgb(238, 157, 157);
+}
+.city{
+  color: rgb(179, 143, 28);
+   
+}
+ol{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.time{
+  background-color: rgb(238, 211, 178);
+  padding: 1ch;
+  margin-left: 10ch;
+  margin-right: 10ch;
+}
+
+.AddForm{
+  border: none;
+  padding: 2ch;
+  margin-left: 15ch;
+  margin-right: 15ch;
+  text-align: center;
+  background-color: rgb(154, 207, 180);
+}
+.newPost{
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(10, 73, 102);
+  margin-bottom:3ch;
+
+}
+.newInput
+{
+  width: 70%;
+  margin: 1ch;
+  padding: 1ch;
+  font-family:cursive;  
+   border: none;
+   font-style: italic;
+   color: rgb(224, 33, 33);
+} 
+.Addbtn {
+  background-color: rgb(89, 89, 218);
+  padding: 1ch;
+  border-radius: 10%;
+  border: none;
+  font-family: monospace;
+  font-weight: bolder;
+  color: rgb(110, 21, 39);
+  cursor: pointer;
+  
+}
+.ubtn{
+  background-color: teal;
+  border: none;
+  padding: 1ch;
+  color: azure;
+  font-family: cursive;
+}

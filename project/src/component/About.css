@@ -1,0 +1,30 @@
+
+.box{
+
+    background-color: rgb(240, 227, 240);
+    margin: 3ch;
+}
+.header{
+    color: rgb(206, 39, 39);
+    margin: 2ch;
+    padding: 1ch;
+    text-decoration: underline;
+    font-family: monospace;
+}
+
+.time{
+
+    color: darkslategray;
+    text-align: center;
+    font-family: serif;
+    font-size: medium;
+
+}
+.content{
+
+    color: rgb(19, 61, 19);
+    margin-left: 2ch;
+    margin-right: 2ch;
+    padding-bottom: 3ch;
+    font-family: cursive;
+}
