@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.App ul li {
+  display: inline;
+  padding: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+/* .Post {
+
+  border-radius: 3px;
+
+  border: 1px solid #e6e6e6;
+
+  background-color: #fff;
+
+  margin-bottom: 60px;
+
+  margin-left : 20%;
+
+  margin-right: 20%;
+  
+
+}
+
+.Post-user {
+
+  display: flex;
+
+  padding: 16px;
+
+  align-items: center;
+
+}
+
+.Post-user-profilepicture {
+
+  width: 30px;
+
+  height: 30px;
+
+}
+
+.Post-user-profilepicture img {
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 50%;
+
+}
+
+.Post-user-nickname {
+
+  margin-left: 12px;
+
+  font-family: 'PT Sans', sans-serif;
+
+  font-weight: bold;
+
+} */
+
+.Post-image-bg {
+
+  background-color: #efefef;
+
+}
+
+.Post-image img {
+
+  width: 700px;
+
+}
+
+.Post-caption {
+
+  padding: 16px 16px;
+  
+
+}
+
+.Post-caption strong {
+
+  font-family: 'PT Sans', sans-serif;
+
+  font-weight: bold;
+
+}
+
+.vjs-fade-out {
+
+  display: none;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+}
