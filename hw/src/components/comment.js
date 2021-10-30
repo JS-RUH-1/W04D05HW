@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 
 function Mycomment() {
+  //Modal Trigger to show & hide
   const [modalShow, setModalShow] = useState(false);
-  //Input box value
+
+  //Input  Comment box value
   const [add, setAdd] = useState("");
+  //Input Edit box value in edit Modal
   const [editValue, setEditValue] = useState("");
+
+  //Index of edited comment
   const [myindex, setIndex] = useState();
 
   // Comments List
@@ -16,7 +21,7 @@ function Mycomment() {
   //Add func
   const addComment = () => {
     //check if input is empty
-    if (add == "") return;
+    if (add === "") return;
     // create temp array
     let tempArr = [...value];
     //get add value and push it in temp array
@@ -35,25 +40,33 @@ function Mycomment() {
     // store  the temp array into Comments List
     setValue(tempArr);
   };
-  
+  //Edit Comment btn clicked
   const handelEditOpen = (index) => {
-   setModalShow(true)
-   let tempArr = [...value]
-   setEditValue(tempArr[index])
-   setIndex(index)
+    // Show edit modal
+    setModalShow(true);
+    //copy the current comments
+    let tempArr = [...value];
+    //set the text of edit input to the clicked comment
+    setEditValue(tempArr[index]);
+    //store index to use it in save func
+    setIndex(index);
   };
+  //Save Btn in edit modal clicked
   const handelEditSave = () => {
-    if(editValue=="")return 
-    let tempArr = [...value]
-    tempArr[myindex] = editValue
-    console.log(tempArr)
-    setValue(tempArr)
-    setModalShow(false)
-   };
+    //check if the input is empty
+    if (editValue === "") return;
+    //copy the current comments to temp array
+    let tempArr = [...value];
+    //edit the temp array
+    tempArr[myindex] = editValue;
+    //change the current list to temp array
+    setValue(tempArr);
+    //hide modal
+    setModalShow(false);
+  };
 
   return (
     <div>
-
       <Modal
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -62,7 +75,9 @@ function Mycomment() {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">Edit Comment</Modal.Title>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Edit Comment
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <span>Comment: </span>
@@ -72,18 +87,16 @@ function Mycomment() {
             value={editValue}
             onChange={(e) => setEditValue(e.target.value)}
           />
-      
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={() => setModalShow(false)}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={()=> handelEditSave()} >
+          <Button variant="primary" onClick={() => handelEditSave()}>
             Save
           </Button>
         </Modal.Footer>
       </Modal>
-
 
       <hr />
       <input
@@ -95,7 +108,7 @@ function Mycomment() {
       />
       <Button
         variant="secondary"
-        style={{ marginLeft: 20 }}
+        style={{ marginLeft: 20, fontSize: 15 }}
         onClick={() => addComment()}
       >
         Post
@@ -117,17 +130,19 @@ function Mycomment() {
               {e}
             </li>
             <div>
-              <Button variant="danger" style={{marginRight:15}} onClick={() => handelDelete(index)}>
+              <Button
+                variant="danger"
+                style={{ marginRight: 15 }}
+                onClick={() => handelDelete(index)}
+              >
                 <FontAwesomeIcon size="md" icon={faTrash} />
               </Button>
-              <Button variant="warning" onClick={() =>  handelEditOpen(index)}>
-              <FontAwesomeIcon size="md" icon={faEdit} />
-            </Button>
-            <hr/>
+              <Button variant="warning" onClick={() => handelEditOpen(index)}>
+                <FontAwesomeIcon size="md" icon={faEdit} />
+              </Button>
+              <hr />
             </div>
-          
           </div>
-          
         ))}
       </ul>
     </div>

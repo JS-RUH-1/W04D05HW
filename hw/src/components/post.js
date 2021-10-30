@@ -1,43 +1,50 @@
 import "../App.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Mycomment from "./comment";
 import { Modal, Button } from "react-bootstrap";
 
 function Post() {
-
+  //Modal Trigger to show & hide
   const [modalShow, setModalShow] = useState(false);
-
-  const [addImage, setAddImage] = useState("");
+  //input title in post modal
   const [addTitle, setAddTitle] = useState("");
-
+  //input image  in post modal
+  const [addImage, setAddImage] = useState("");
+  //arr to store data
   const [arr, setArr] = useState([
     {
       posTitle: "First post",
       image:
-        "https://media.almayadeen.tv/archive/image/2020/6/18/e063130d-751a-4934-8753-f01f758c7428.png?v=3",
+        "https://www.wpbeginner.com/wp-content/uploads/2016/02/showallposts.jpg",
     },
     {
       posTitle: "Second post",
       image:
-        "https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ",
+        "http://emptyeasel.com/wp-content/uploads/2018/08/postaboutyourfavouriteart.jpg",
     },
     {
       posTitle: "Third post",
       image:
-        "https://whatsnewinpublishing.com/wp-content/uploads/2017/02/snapchat.jpg",
+        "https://cdn.wedevs.com/uploads/2019/01/How-to-get-more-comments-on-blogs-updated.png",
     },
   ]);
-
+  //Save button clicked in New Post modal
   const handelAdd = () => {
-
-    if(addTitle==""||addImage=="")return alert("Please Enter Title && URL")
-
+    //check if the inputs empty
+    if (addTitle === "" || addImage === "")
+      return alert("Please Enter Title && URL");
+    //store the current arr in temp array
     let tempArray = [...arr];
+    //push the new data  in  temp array
     tempArray.push({ posTitle: addTitle, image: addImage });
+    // store teh temp array in the current arr
     setArr(tempArray);
+    // hide modal
     setModalShow(false);
-    setAddTitle("")
-    setAddImage("")
+    // set input value to empty
+    setAddTitle("");
+    // set input value to empty
+    setAddImage("");
   };
 
   return (
@@ -45,7 +52,7 @@ function Post() {
       <h1>Posts Page</h1>
 
       <Button
-        style={{ margin: 20 }}
+        style={{ margin: 20, fontSize: 18 }}
         variant="primary"
         onClick={() => setModalShow(true)}
       >
@@ -55,7 +62,7 @@ function Post() {
       <Modal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        size="md"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -70,13 +77,27 @@ function Post() {
             value={addTitle}
             onChange={(e) => setAddTitle(e.target.value)}
           />
-          <span>URL::</span>{" "}
+          <br />
+          <br />
+          <span>URL:</span>{" "}
           <input
             type="text"
             className="modalInput"
             value={addImage}
             onChange={(e) => setAddImage(e.target.value)}
           />
+          <br />
+          <br />
+          <div>
+            <input
+              type="file"
+              accept="image/png, image/gif, image/jpeg"
+              name="test"
+              onChange={(e) =>
+                setAddImage(URL.createObjectURL(e.target.files[0]))
+              }
+            />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={() => setModalShow(false)}>
@@ -90,15 +111,15 @@ function Post() {
 
       <div className="container">
         {arr.map((e, index) => (
-          <div className="mycon">
+          <div className="mycon" key={index}>
             <img
               src={e.image}
               alt={""}
               width={350}
-              height={250}
+              height={290}
               style={{ borderRadius: 5 }}
             />
-            <h5 >{e.posTitle}</h5>
+            <h5>{e.posTitle}</h5>
             <Mycomment />
           </div>
         ))}

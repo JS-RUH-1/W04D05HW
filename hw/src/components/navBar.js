@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   NavLink,
 } from "react-router-dom";
 import About from "./About";
@@ -20,19 +19,18 @@ function NavBar(props) {
   //select list  value
   const [value, setValue] = useState("Riyadh");
 
-  // Fetch the Api based on the value from Select List
-  const fetchApi = async () => {
-    // const data = await axios.get(
-    //   `http://api.weatherstack.com/current?access_key=7ff136af77dfc444577ce6cbb4358c06&query=${value}`
-    // );
-    // //Set the Temperature
-    // setTemp(data.data.current.temperature);
-    // //Set the Weather icon
-    // setIcon(data.data.current.weather_icons[0]);
-  };
-
-  //Gets Call whenever select list value change
   useEffect(() => {
+    // Fetch the Api based on the value from Select List
+    const fetchApi = async () => {
+      const data = await axios.get(
+        `http://api.weatherstack.com/current?access_key=7ff136af77dfc444577ce6cbb4358c06&query=${value}`
+      );
+      //Set the Temperature
+      setTemp(data.data.current.temperature);
+      //Set the Weather icon
+      setIcon(data.data.current.weather_icons[0]);
+    };
+    //Gets Call whenever select list value change
     fetchApi();
   }, [value]);
 
@@ -71,7 +69,13 @@ function NavBar(props) {
         <li style={{ fontSize: 16, marginLeft: 30 }}> {temp + "°"}</li>
         <li>
           {" "}
-          <img src={icon} width={50} height={50} style={{ borderRadius: 30 }} />
+          <img
+            src={icon}
+            width={50}
+            height={50}
+            alt=""
+            style={{ borderRadius: 30 }}
+          />
         </li>
       </nav>
 
