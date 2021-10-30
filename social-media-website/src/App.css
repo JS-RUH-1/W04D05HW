@@ -1,5 +1,17 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+@import "~bootstrap/dist/css/bootstrap.css";
 
 .App {
   text-align: center;
+}
+
+.color {
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+.textAreacss {
+  width: 500px;
+  margin-left: 29.8% !important;
 }
