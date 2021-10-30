@@ -1,48 +1,42 @@
-import Nav from "react-bootstrap/Nav";
+import "../Styles/NavBar-module.css";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+
 import Container from "react-bootstrap/Container";
-import axios from "axios";
-import { useState, useEffect } from "react";
 
 //  "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=8618b3d831e9d657b3baac2facdfe14d"
 function NavBar() {
-  let [weather, setWeather] = useState({});
-  let test;
-  //c9f8ac3eb82f05a77a780df0ac9761db0287f8c1e74033771c301a0499a1581c
+  // let type;
+  // let [current, setCurrent] = useState({});
+  // let [location, setLocation] = useState({});
+  // let [Temp, setTemp] = useState();
 
-  useEffect(() => {
-    axios
-      .get("https://www.timeapi.io/api/Time/current/zone?timeZone=Asia/riyadh")
-      .then((data) => {
-        console.log(data.data);
-        console.log(data.data.time);
-        console.log(data.data.date);
-        // setWeather({ tempr: data.data.main.temp });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [test]);
+  //c9f8ac3eb82f05a77a780df0ac9761db0287f8c1e74033771c301a0499a1581c
+  // 16ffac033d1144a5947130937213010 (WEATHER API NEW)
+  // http://api.weatherapi.com/v1/current.json?key=70969e9c908149eb960131625213010&q=London&aqi=no
+  //www.timeapi.io/api/Time/current/zone?timeZone=Asia/riyadh
+  // useEffect(() => {
+  //   axios
+  //     .get(
+  //       "http://api.weatherapi.com/v1/current.json?key=70969e9c908149eb960131625213010&q=London&aqi=no"
+  //     )
+  //     .then((data) => {
+  //       console.log(data.data);
+  //       setTemp(data.data.current.temp_c);
+  //       setCurrent(data.data.current);
+  //       setLocation(data.data.location);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, [type]);
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="NavBar">
         <Container>
-          <Navbar.Brand href="/">Home</Navbar.Brand>
-          <Navbar.Brand className="d-lg-none" href="/">
-            {weather.tempr}
-            <button onClick={() => {}}>C</button>
-            <button>C</button>
+          <Navbar.Brand href="/">
+            Social media <kbd>Beta</kbd>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/AboutUs">About us</Nav.Link>
-              <Nav.Link href="/Posts">Posts</Nav.Link>
-              <Nav.Link href="/Setting">Setting</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
