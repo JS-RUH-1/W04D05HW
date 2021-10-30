@@ -4,18 +4,17 @@ import { Navbar } from "./components/Navbar";
 import { About } from "./components/About";
 import { Post } from "./components/Post";
 import { Weather } from "./components/Weather";
-// import "bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <Router>
-    <div className="App">
-    <Navbar></Navbar>
-    
-      <div className="App-header">
+      <div className="App">
+        <Navbar></Navbar>
 
-      <Switch>
+        <div>
+          <Switch>
             <Route exact path="/about">
               <About />
             </Route>
@@ -26,11 +25,9 @@ function App() {
               <Weather />
             </Route>
           </Switch>
+        </div>
       </div>
-      
-    </div>
     </Router>
-    
   );
 }
 

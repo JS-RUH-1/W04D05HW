@@ -5,7 +5,7 @@ export const Post = () => {
     {
       title: "Visca Barca",
       image:
-        "https://www.fcbarcelona.com/photo-resources/2021/08/09/276ad270-e5c6-453d-8d9f-212417ad7cb3/Camp-Nou-3.jpg?width=1200&height=750",
+        "https://static.turbosquid.com/Preview/2019/10/15__08_22_30/signature.jpgF69E6B71-AB2B-4A96-B53D-664FF1EC5287Large.jpg",
     },
     {
       title: "Best City EVER!!!",
@@ -19,35 +19,24 @@ export const Post = () => {
     },
   ];
 
-  //   const [post, setpost] = useState('')
-
   return (
-    <div>
+    <div className="posts">
+      <br></br>
       {arr.map((e) => (
-        <div className="Post">
-          <div className="Post-image-bg">
-            <div className="Post-image">
-              <div>
+        <div className="container-fluid d-flex justify-content-center">
+          <div className="col-6">
+            <div className="card text-center">
+              <div className="overflow">
                 <img src={e.image} alt="" />
               </div>
+              <div className="card-body text-dark">
+                <h4 className="card-title">{e.title}</h4>
+              </div>
             </div>
-
-            <div className="Post-caption">
-              <strong> {e.title}</strong>
-            </div>
+            <br></br>
           </div>
-          <br></br>
         </div>
       ))}
     </div>
   );
 };
-
-// <div className='post'>
-//       {arr.map((e) =>(
-//           <div>
-//           <p>{e.title}</p>
-//           <img src={e.image} alt="" />
-//           </div>
-//       ))}
-//       </div>
