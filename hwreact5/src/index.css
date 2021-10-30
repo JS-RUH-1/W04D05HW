@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* style NavBar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #016ba8;
+}
+
+li {
+  float: left;
+}
+
+li a,
+.dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgb(241, 248, 248);
+  color: #016ba8;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* ---------postes-------- */
+.posts {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+img {
+  border-radius: 20%;
+}
+
+/* --------comments--------- */
+.container {
+  max-width: 640px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+.comment {
+  display: block;
+  transition: all 1s;
+}
+.commentClicked {
+  min-height: 0px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.container textarea {
+  width: 300px;
+  border: none;
+  background: #e8e8e8;
+  padding: 5px 10px;
+  height: 50%;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: 2px solid #016ba8;
+  transition: all 0.5s;
+  margin-top: 15px;
+}
+
+button.primaryContained {
+  background: #016ba8;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  margin-top: 0px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+  transition: 1s all;
+  font-size: 10px;
+  border-radius: 5px;
+  display: inline;
+}
+button.primaryContained:hover {
+  background: #9201a8;
+}
+button.redContained {
+  background: #9b1a03;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  margin-top: 0px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+  transition: 1s all;
+  font-size: 10px;
+  border-radius: 5px;
+}
