@@ -4,6 +4,7 @@ import Mycomment from "./comment";
 import { Modal, Button } from "react-bootstrap";
 
 function Post() {
+
   const [modalShow, setModalShow] = useState(false);
 
   const [addImage, setAddImage] = useState("");
@@ -12,30 +13,31 @@ function Post() {
   const [arr, setArr] = useState([
     {
       posTitle: "First post",
-      comment: "",
       image:
         "https://media.almayadeen.tv/archive/image/2020/6/18/e063130d-751a-4934-8753-f01f758c7428.png?v=3",
     },
     {
       posTitle: "Second post",
-      comment: "",
       image:
         "https://play-lh.googleusercontent.com/h9jWMwqb-h9hjP4THqrJ50eIwPekjv7QPmTpA85gFQ10PjV02CoGAcYLLptqd19Sa1iJ",
     },
     {
       posTitle: "Third post",
-      comment: "",
       image:
         "https://whatsnewinpublishing.com/wp-content/uploads/2017/02/snapchat.jpg",
     },
   ]);
 
   const handelAdd = () => {
+
+    if(addTitle==""||addImage=="")return alert("Please Enter Title && URL")
+
     let tempArray = [...arr];
     tempArray.push({ posTitle: addTitle, image: addImage });
     setArr(tempArray);
     setModalShow(false);
-    console.log(tempArray);
+    setAddTitle("")
+    setAddImage("")
   };
 
   return (
@@ -43,7 +45,7 @@ function Post() {
       <h1>Posts Page</h1>
 
       <Button
-        style={{ margin: 30 }}
+        style={{ margin: 20 }}
         variant="primary"
         onClick={() => setModalShow(true)}
       >
@@ -92,11 +94,11 @@ function Post() {
             <img
               src={e.image}
               alt={""}
-              width={400}
-              height={300}
+              width={350}
+              height={250}
               style={{ borderRadius: 5 }}
             />
-            <h4>{e.posTitle}</h4>
+            <h5 >{e.posTitle}</h5>
             <Mycomment />
           </div>
         ))}

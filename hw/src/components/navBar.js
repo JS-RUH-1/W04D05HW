@@ -40,7 +40,12 @@ function NavBar(props) {
     <Router>
       <nav>
         <li>
-          <NavLink to="/post" className="mylink" activeClassName="selected">
+          <NavLink
+            to="/"
+            className="mylink"
+            exact={true}
+            activeClassName="selected"
+          >
             Post
           </NavLink>
         </li>
@@ -71,11 +76,11 @@ function NavBar(props) {
       </nav>
 
       <Switch>
+        <Route exact path="/">
+          <Post />
+        </Route>
         <Route exact path="/about">
           <About />
-        </Route>
-        <Route exact path="/post">
-          <Post />
         </Route>
       </Switch>
     </Router>
