@@ -24,16 +24,18 @@ export const Post = () => {
       <br></br>
       {arr.map((e) => (
         <div className="container-fluid d-flex justify-content-center">
-          <div className="col-6">
-            <div className="card text-center">
-              <div className="overflow">
-                <img src={e.image} alt="" />
+          <div className="row">
+            <div className="col">
+              <div className="card text-center">
+                <div className="overflow">
+                  <img className="card-img-top img-fluid" src={e.image} alt="" />
+                </div>
+                <div className="card-body text-dark">
+                  <h4 className="card-title">{e.title}</h4>
+                </div>
               </div>
-              <div className="card-body text-dark">
-                <h4 className="card-title">{e.title}</h4>
-              </div>
+              <br></br>
             </div>
-            <br></br>
           </div>
         </div>
       ))}
