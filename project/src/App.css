@@ -1,9 +1,29 @@
+
+ /* @media screen and (min-width: 500px) and (max-width:700px) {
+  body{
+    background-color: rgb(188, 188, 241);
+  }
+  .po{
+    border: black solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+  }
+}
+
+
+@media screen and (min-width: 700px){
+  body{
+    background-color: black
+  };
+} */
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: rgb(204, 224, 178);
+  /* width: 100%; */
 }
 
 li {
@@ -34,15 +54,15 @@ ol{
 .time{
   background-color: rgb(238, 211, 178);
   padding: 1ch;
-  margin-left: 10ch;
-  margin-right: 10ch;
+  width: 100%;
+  
 }
 
 .AddForm{
   border: none;
   padding: 2ch;
-  margin-left: 15ch;
-  margin-right: 15ch;
+  margin-left: 3ch;
+   
   text-align: center;
   background-color: rgb(154, 207, 180);
 }

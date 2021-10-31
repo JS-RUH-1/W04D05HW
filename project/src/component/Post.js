@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 //const useEffect =React.useEffect
 
 import './Post.css'
-
-
-
+ 
 export default function Post(){
 
 const [displayPost, setDisplayPost]= useState([
@@ -88,13 +86,13 @@ function handleEditFromSubmit(e){
 
      return(
          <>
-<div class='po'> 
+<div className='po'> 
 
         {displayPost.map((post)=>(
          
         <div class='post' >
-           <ol>
-              {/* {post.id} */}
+           
+              
            <h4>  {post.title}</h4>
            <img src= {post.img} className='Aimg' alt ='' width={150} height={150}/>  
            <br/>
@@ -129,7 +127,7 @@ onChange={handleEditInputChange}/>
                  Edit comment
                  </button>
            )}
-          </ol>
+          
           </div> 
            
         ))}

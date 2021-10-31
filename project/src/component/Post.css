@@ -1,5 +1,32 @@
+/* //tablet */
+
+ /* PC */
+ @media screen and (min-width: 700px )  {
+     
+  .po{
+     
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); ;
+  }
+
+}
+
+@media screen and (min-width: 500px) and (max-width:700px) {
+    
+    .po{
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+
+
+ 
+
+  
 .post{
-  text-align: center;
+   
+    margin-right: 3ch;
     margin: 1ch;
     border: rgb(252, 107, 107) solid;
     text-align: center;
@@ -9,16 +36,12 @@
 }
 
 .po{
+     
     text-align: center;
-    display:grid; 
-    grid-template-columns: 1fr 1fr 1fr ;
-
-    /* border: solid; */
-    /* margin: 3ch; */
-
 }
 h4 {
     text-align: center;
+    margin-right: 3ch;
     font-family: cursive;
     color: rgb(163, 7, 7);
     text-decoration: underline;
@@ -35,7 +58,7 @@ h4 {
     cursor: pointer;
     border: none;
     padding: 1ch;
-    margin-left: 3ch;
+    margin-left: 1ch;
     margin-right: 5ch;
 }
 .Abtn{
@@ -43,16 +66,16 @@ h4 {
     margin: 1ch;
     font-family: cursive;
     color: maroon;
+    text-align: center;
 }
 .Aimg{
     text-align: center;
-    border: teal solid;
-    width: 150;
-    height: 150;
-    margin-left: 5ch;
-    margin-right: 2ch;
-   /* display: flex;
-  justify-content: center; */
+ 
+    width: 200;
+    height: 200;
+    margin-left: 2ch;
+    margin-right: 3ch;
+   
 }
 .Ebtn{
     background-color: rgb(160, 204, 0);
@@ -63,12 +86,13 @@ h4 {
     border: none;
     padding: 1ch;
     text-align: center;
-    margin-left: 3ch;
+    margin-left: 1ch;
     margin-right: 5ch;
 }
 .fo{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: rgb(12, 116, 134);
     text-decoration: underline;
+    margin-right: 4ch;
      
 }
