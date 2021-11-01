@@ -1,6 +1,6 @@
 import * as ReactBootStrap from "react-bootstrap";
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch ,Link} from 'react-router-dom'
 
 
 function Navbar() {
