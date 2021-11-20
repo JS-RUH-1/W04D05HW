@@ -17,7 +17,9 @@ function Content (){
 									<img src={element.image} class="card-img-top"></img>
 									<div class="card-body">
 										<p class="card-text">{ element.post }</p>
-											<Link to={ `/comments/${i}`} class="btn btn-primary">Comments</Link>
+											<Link to={ `/comments/${i}`} class="btn btn-primary">
+												Comments
+											</Link>
 										</div>
 								</div>
 							);
