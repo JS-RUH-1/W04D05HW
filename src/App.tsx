@@ -47,13 +47,12 @@ const deleteComment=(event:any)=>{
 
   var index = allPosts[event.target.value].comments.indexOf(event.target.id);
 
-  console.log(index)
   if (index > -1) {
     posts[event.target.value].comments.splice(index, 1);
   }
 
   setPosts(allPosts)
-
+  setComment(" ")
 }
 
   return (
